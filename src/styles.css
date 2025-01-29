@@ -1,0 +1,191 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin and padding
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+:root {
+  --lightBrow: #e5d0ac;
+  --background: #fef9e1;
+  --red: #a31d1d;
+  --darkRed: #6d2323;
+  --green: #4caf50; /* Added green */
+  --text: #333; /* Added default text color */
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  background: var(--darkRed);
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  padding: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li button {
+  color: var(--lightBrow);
+  background: transparent;
+  border: none;
+  font-weight: bold;
+  padding: 0 10px;
+  position: relative;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.background {
+  background-color: var(--background);
+}
+
+.homePage {
+  background-image: url(./a.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 914px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homePage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--darkRed);
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.homePage h1,
+.homePage p {
+  position: relative;
+  z-index: 2;
+  color: var(--background);
+}
+
+.textArea {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.textArea .menu {
+  color: var(--background);
+  background: transparent;
+  border: none;
+  font-weight: bold;
+  padding: 0 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.textArea .menu{
+    margin-top: 40px;
+    padding: 10px;
+    border-radius: 10px;
+    border: var(--background) solid 2px;
+    background-color: var(--darkRed);
+}
+
+.textArea .menu:hover{
+    border: var(--darkRed) solid 2px;
+    background-color: var(--background);
+    color: var(--darkRed);
+    transition: .5s;
+}

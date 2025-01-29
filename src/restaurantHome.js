@@ -1,18 +1,32 @@
+import "./styles.css"
+import { menuLoad } from "./pageLoad";
+
 const createRestaurantHomePage = () => {
     const content = document.querySelector('#content');
-    const pageContent = document.createElement('div');
-    pageContent.classList.add('page-content');
+    content.innerHTML = ''; // Clear the content
+
+    const homePage = document.createElement('div');
+    homePage.classList.add('homePage');
+
+    const textArea = document.createElement('div');
+    textArea.classList.add('textArea');
 
     const headLine = document.createElement('h1');
     headLine.textContent = "Welcome to the restaurant!";
-    pageContent.appendChild(headLine);
+    textArea.appendChild(headLine);
 
     const paragraph = document.createElement('p');
-    paragraph.textContent = "trary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable s";
-    pageContent.appendChild(paragraph)
+    paragraph.textContent = "Welcome to The Restaurant, where every dish tells a story of flavor, passion, and tradition. Our kitchen is dedicated to crafting unforgettable meals using the freshest, locally-sourced ingredients. Whether you're here for a cozy dinner or a special celebration, we invite you to savor the moment and enjoy an experience that’s as warm and inviting as our hospitality. Come dine with us and taste the difference!";
+    textArea.appendChild(paragraph);
 
-    // Append the pageContent to the content element
-    content.appendChild(pageContent);
+    const menuButton = document.createElement('p');
+    menuButton.classList.add('menu');
+    menuButton.textContent = "View Menu";
+    menuButton.addEventListener('click', menuLoad); 
+    textArea.appendChild(menuButton);
+
+    homePage.appendChild(textArea);
+    content.appendChild(homePage);
 };
 
 export default createRestaurantHomePage;

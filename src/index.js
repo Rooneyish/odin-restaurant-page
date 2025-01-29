@@ -1,4 +1,8 @@
-import pageLoad from "./pageLoad";
+import { buttonActions, menuLoad } from './pageLoad';
 
-// load page
-pageLoad();
+// Call buttonActions to set up the event listeners
+
+
+buttonActions();
+// Optionally, call initialLoad to load the home page by default
+initialLoad();
