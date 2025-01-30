@@ -1,4 +1,4 @@
-import "./styles.css"
+import "./styles.css";
 import { menuLoad } from "./pageLoad";
 
 const createRestaurantHomePage = () => {
@@ -12,7 +12,7 @@ const createRestaurantHomePage = () => {
     textArea.classList.add('textArea');
 
     const headLine = document.createElement('h1');
-    headLine.textContent = "Welcome to the restaurant!";
+    headLine.textContent = "Welcome to The Restaurant!";
     textArea.appendChild(headLine);
 
     const paragraph = document.createElement('p');

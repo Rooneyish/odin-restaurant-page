@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Amethysta&family=Lora:ital,wght@0,400..700;1,400..700&family=Maitree:wght@200;300;400;500;600;700&display=swap');
 /*
   1. Use a more-intuitive box-sizing model.
 */
@@ -16,6 +17,14 @@
 }
 
 /*
+  Ensure html and body take full height
+*/
+html,
+body {
+  height: 100%;
+}
+
+/*
   Typographic tweaks!
   3. Add accessible line-height
   4. Improve text rendering
@@ -23,6 +32,7 @@
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  margin: 0; /* Ensure no default margin */
 }
 
 /*
@@ -73,9 +83,13 @@ h6 {
   --background: #fef9e1;
   --red: #a31d1d;
   --darkRed: #6d2323;
-  --green: #4caf50; /* Added green */
-  --text: #333; /* Added default text color */
+  --green: #4caf50;
+  --text: #333;
 }
+
+/* font-family: "Lora", serif; */
+/* font-family: "Amethysta", serif; */
+/* font-family: "Maitree", serif; */
 
 a {
   text-decoration: none;
@@ -83,6 +97,8 @@ a {
 
 ul {
   list-style: none;
+  padding: 0; /* Ensure no default padding */
+  margin: 0; /* Ensure no default margin */
 }
 
 header {
@@ -119,6 +135,12 @@ nav ul li button {
   position: relative;
   font-size: 16px;
   cursor: pointer;
+  transition: color 0.5s;
+  font-family: "Amethysta", serif; 
+}
+
+nav ul li button:hover {
+  color: var(--background);
 }
 
 .background {
@@ -156,6 +178,14 @@ nav ul li button {
   color: var(--background);
 }
 
+.homePage h1{
+  font-family: "Lora", serif; 
+}
+
+.homePage p{
+  font-family: "Maitree", serif;
+}
+
 .textArea {
   width: 70%;
   display: flex;
@@ -173,19 +203,80 @@ nav ul li button {
   padding: 0 10px;
   font-size: 16px;
   cursor: pointer;
+  margin-top: 40px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid var(--background);
+  background-color: var(--darkRed);
+  transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+  font-family: "Amethysta", serif; 
 }
 
-.textArea .menu{
-    margin-top: 40px;
-    padding: 10px;
-    border-radius: 10px;
-    border: var(--background) solid 2px;
-    background-color: var(--darkRed);
+.textArea .menu:hover {
+  border-color: var(--darkRed);
+  background-color: var(--background);
+  color: var(--darkRed);
 }
 
-.textArea .menu:hover{
-    border: var(--darkRed) solid 2px;
-    background-color: var(--background);
-    color: var(--darkRed);
-    transition: .5s;
+.menuPage {
+  background-image: url(./a.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 20px;
+  min-height: 914px; 
+}
+
+.menuPage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--darkRed);
+  opacity: 0.6;
+  z-index: 1; 
+}
+
+.menuPage h2 {
+  text-align: center;
+  width: 100%;
+  margin-top: 20px;
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: var(--background);
+  position: relative; 
+  z-index: 3; 
+  font-family: "Lora", serif; 
+}
+
+.menuPage h3 {
+  font-size: 24px;
+  color: var(--background);
+  position: relative; 
+  z-index: 3; 
+  font-family: "Amethysta", serif;
+  text-decoration: underline; 
+}
+
+.menuPage ul{
+  font-family: "Maitree", serif;
+}
+
+.menuList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 30px;
+  color: var(--background);
+  position: relative; 
+  z-index: 3; 
+}
+
+.menuList li {
+  margin: 8px;
 }
